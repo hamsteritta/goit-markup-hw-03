@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: #434455;
@@ -7,6 +13,8 @@ body {
 
 ul {
   list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 a {
@@ -16,12 +24,46 @@ a {
 button {
   cursor: pointer;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+main {
+  flex-grow: 1;
+}
 
 .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.container {
+  max-width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .title {
@@ -45,9 +87,15 @@ button {
 /**==========================*/
 /**=========HEADER=================*/
 
-.header {
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e7e9fc;
 }
 .header-navigation {
+  display: flex;
 }
 .header-logo {
   font-family: "Raleway", sans-serif;
@@ -57,6 +105,7 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
+  margin-right: 76px;
 }
 .header-logo-color {
   color: #2e2f42;
@@ -67,6 +116,8 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  display: flex;
+  gap: 40px;
 }
 .header-menu-item {
 }
@@ -80,6 +131,9 @@ button {
 
 .header-contact-list {
   font-style: normal;
+  display: flex;
+  gap: 40px;
+  justify-content: flex-end;
 }
 .header-contact-item {
 }
@@ -96,6 +150,11 @@ button {
 }
 
 .hero {
+  display: flex;
+  padding-top: 173.33px;
+  padding-bottom: 356.27px;
+  padding-left: 472px;
+  padding-right: 472px;
   background: #2e2f42;
 }
 .hero-title {
@@ -105,6 +164,8 @@ button {
   letter-spacing: 0.02em;
   text-align: center;
   color: #fff;
+
+  margin-bottom: 52.96px;
 }
 .hero-bye-btn {
   font-weight: 500;
@@ -113,7 +174,15 @@ button {
   letter-spacing: 0.04em;
   color: #fff;
   background: #4d5ae5;
+  display: block;
+
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 16px 32px;
+  margin: auto;
+  margin-bottom: 241.53px;
 }
+
 .hero-bye-btn:hover,
 .hero-bye-btn:focus {
   background-color: #404bbf;
@@ -123,12 +192,19 @@ button {
 /**=========FEATURES=================*/
 
 .features {
+  padding-top: 58px;
+  padding-bottom: 120px;
 }
 .features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 .features-item {
+  width: calc((100% - 72px) / 4);
 }
 .features-subtitle {
+  padding-bottom: 8px;
 }
 .features-item-text {
   font-weight: 400;
@@ -142,16 +218,24 @@ button {
 /**=========TEAM=================*/
 
 .team {
+  padding-top: 120px;
+  padding-bottom: 120px;
   background: #f4f4fd;
 }
 .team-title {
+  margin-bottom: 72px;
 }
 .team-list {
+  display: flex;
+  gap: 24px;
 }
 .team-item {
   background: #fff;
 }
 .team-image {
+  max-width: 100%;
+  border-radius: 0 0 4px 4px;
+  padding: 0px 0px 32px 0px;
 }
 .team-subtitle {
   text-align: center;
@@ -162,38 +246,63 @@ button {
   letter-spacing: 0.02em;
   text-align: center;
   color: #434455;
+  padding-top: 8px;
+  padding-bottom: 32px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16);
 }
 
 /**==========================*/
 /**=========PORTFOLIO=================*/
 
 .portfolio {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 .portfolio-title {
+  padding-bottom: 72px;
 }
 
 .portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 .portfolio-item {
   background: #fff;
+  width: calc((100% - 48px) / 3);
 }
 .portfolio-img {
+  max-width: 100%;
 }
 .portfolio-subtitle {
+  border-right: 1px solid #e7e9fc;
+  border-left: 1px solid #e7e9fc;
+  padding-top: 32px;
+  padding-left: 16px;
+  padding-bottom: 8px;
 }
+
 .portfolio-text {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  border: 1px solid #e7e9fc;
+  border-top: none;
+  padding-top: 8px;
+  padding-left: 16px;
+  padding-bottom: 32px;
 }
 
 /**==========================*/
 /**=========FOOTER=================*/
 
 .footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
   background: #2e2f42;
 }
 .footer-logo {
@@ -204,6 +313,8 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
+  display: flex;
+  padding-bottom: 16px;
 }
 .footer-logo-color {
   color: #f4f4fd;
