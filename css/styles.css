@@ -121,10 +121,10 @@ main {
   gap: 40px;
 }
 .header-menu-item {
-  padding: 24px 0;
 }
 .header-menu-link {
   color: #2e2f42;
+  padding: 24px 0;
 }
 .header-menu-link:hover,
 .header-menu-link:focus {
